@@ -1,9 +1,15 @@
 # Morgen TaskNotes Sync
 
-Created by **0xSnib**.
+This Obsidian helper keeps TaskNotes’ frontmatter `status` in step with the boolean `completed` flag that Morgen expects when importing task notes. 
+Any change coming from TaskNotes is mirrored to Morgen’s property, and any change Morgen writes back is translated into the correct TaskNotes status—without bouncing the note between states.
 
-This Obsidian helper keeps TaskNotes’ frontmatter `status` in step with the boolean `completed` flag that Morgen expects when importing task notes. Any change coming from TaskNotes is mirrored to Morgen’s property, and any change Morgen writes back is translated into the correct TaskNotes status—without bouncing the note between states.
+Copy the contents of `dist/` into `.obsidian/plugins/morgen-tasknotes/` to install locally. Use `npm run dev` while developing to rebuild automatically.
 
+- The plugin never touches the reference `taskNotes/` workspace—only notes inside your vault.
+- Recurrence, reminders, and other TaskNotes properties are left alone; Morgen only needs `tags`, `priority`, `due_date`, `duration`, and the boolean `completed`.
+- If you add or rename TaskNotes statuses or boolean fields, the plugin notices on the next note change and refreshes its mapping automatically.
+- This is provided untested, it's for me, and I fully expect the functionality to be wrapped into either morgen-obsidian or Task Notes
+- Recurrance is untested (we'll see how we go this week)
 ## How it Works
 
 - Reads TaskNotes’ settings at runtime (field mapping, custom statuses, default status).
@@ -41,11 +47,4 @@ npm run build
 
 Copy the contents of `dist/` into `.obsidian/plugins/morgen-tasknotes/` to install locally. Use `npm run dev` while developing to rebuild automatically.
 
-## Notes
-
-- The plugin never touches the reference `taskNotes/` workspace—only notes inside your vault.
-- Recurrence, reminders, and other TaskNotes properties are left alone; Morgen only needs `tags`, `priority`, `due_date`, `duration`, and the boolean `completed`.
-- If you add or rename TaskNotes statuses or boolean fields, the plugin notices on the next note change and refreshes its mapping automatically.
-- This is provided untested, it's for me, and I fully expect the functionality to be wrapped into either morgen-obsidian or Task Notes
-- Recurrance is untested (we'll see how we go this week)
 
