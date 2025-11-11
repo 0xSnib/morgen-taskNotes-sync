@@ -1,0 +1,12 @@
+{
+  "id": "morgen-tasknotes",
+  "name": "Morgen TaskNotes Sync",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Keeps TaskNotes status and Morgen completed flag in sync.",
+  "author": "0xSnib",
+  "authorUrl": "https://github.com/0xSnib",
+  "isDesktopOnly": false
+}
+
+
